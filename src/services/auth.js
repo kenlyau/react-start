@@ -1,3 +1,3 @@
 export function isAuth () {
-  return true
+  return false
 }

@@ -1,9 +1,26 @@
 import React from 'react'
+import {connect} from 'react-redux'
+import {Layout} from 'antd'
+import LoginForm from '../components/login-form'
+import {login} from '../store/user'
+const {Header, Content} = Layout
 
-export default class Login extends React.Component {
+export class Login extends React.Component {
+  constructor (props) {
+    super(props)
+    this.handleSubmit = ({username, password}) => {
+      this.props.dispatch(login(username, password))
+    }
+  }
   render () {
     return (
-      <h1>login</h1>
+      <Layout className="full-container">
+        <Header className="login-header"><h1>React Start</h1></Header>
+        <Content>
+          <LoginForm handleSubmit={this.handleSubmit} />
+        </Content>
+      </Layout>
     )
   }
 }
+export default connect()(Login)

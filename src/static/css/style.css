@@ -1,0 +1,26 @@
+#app {
+  height: 100%;
+}
+.full-container {
+  height: 100%;
+}
+.login-form {
+  width: 300px;
+  margin: 100px auto;
+}
+.login-form .anticon {
+  font-size: 14px;
+}
+.login-form-button {
+  width: 100%;
+}
+.login-header {
+  color: white;
+  background: seagreen;
+  height: 88px;
+  line-height: 88px;
+}
+.login-header h1 {
+  color: white;
+  text-align: center;
+}
