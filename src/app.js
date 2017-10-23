@@ -2,7 +2,7 @@ import React from 'react'
 import {HashRouter, Switch, Route} from 'react-router-dom'
 import PrivateRoute from './components/private-route'
 import Login from './containers/login'
-import Home from './containers/home'
+import MainLayout from './containers/layout'
 
 export default class App extends React.Component {
   render () {
@@ -10,7 +10,7 @@ export default class App extends React.Component {
       <HashRouter>
         <Switch>
           <Route path="/login" component={Login} />
-          <PrivateRoute path="/" component={Home} />
+          <PrivateRoute path="/" component={MainLayout} />
         </Switch>
       </HashRouter>
     )

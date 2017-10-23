@@ -1,15 +1,15 @@
 import React from 'react'
-import {connect} from 'react-redux'
-import {Layout} from 'antd'
+import { connect } from 'react-redux'
+import { Layout } from 'antd'
 import LoginForm from '../components/login-form'
-import {login} from '../store/user'
-const {Header, Content} = Layout
+import { userLogin } from '../store/user'
+const { Header, Content } = Layout
 
 export class Login extends React.Component {
   constructor (props) {
     super(props)
     this.handleSubmit = ({username, password}) => {
-      this.props.dispatch(login(username, password))
+      this.props.dispatch(userLogin(username, password))
     }
   }
   render () {

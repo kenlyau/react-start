@@ -1,5 +1,9 @@
-export function isAuth () {
+export default function initialState () {
   let auth = window.localStorage.getItem('auth')
   auth = auth ? JSON.parse(auth) : {}
-  return !!auth.username
+  return {
+    user: {
+      auth
+    }
+  }
 }

@@ -1,6 +1,10 @@
 #app {
   height: 100%;
 }
+.layout-content {
+  padding: 20px;
+  background: #ffffff;
+}
 .full-container {
   height: 100%;
 }
