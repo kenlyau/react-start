@@ -1,6 +1,6 @@
 import React from 'react'
 import {HashRouter, Switch, Route} from 'react-router-dom'
-import PrivateRoute from './components/private-route'
+import PrivateRoute from './containers/private-route'
 import Login from './containers/login'
 import MainLayout from './containers/layout'
 

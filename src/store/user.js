@@ -33,12 +33,32 @@ export function userLoginSuccess (response) {
   }
 }
 
+export function userLogout () {
+  return {
+    type: types.USER_LOGOUT_REQUEST
+  }
+}
+export function userLogoutError () {
+  return {
+    type: types.USER_LOGOUT_ERROR
+  }
+}
+export function userLogoutSuccess () {
+  return {
+    type: types.USER_LOGOUT_SUCCESS
+  }
+}
+
 export default function user (state = {}, action) {
   switch (action.type) {
     case types.USER_LOGIN_SUCCESS:
       return Object.assign({}, state, {auth: action.payload, error: null})
     case types.USER_LOGIN_ERROR:
       return Object.assign({}, state, {error: action.error})
+    case types.USER_LOGOUT_SUCCESS:
+      return {}
+    case types.USER_LOGOUT_ERROR:
+      return {}
     default:
       return state
   }

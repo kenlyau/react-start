@@ -5,6 +5,16 @@
   padding: 20px;
   background: #ffffff;
 }
+.layout-top-header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #dedede;
+  padding: 0 20px;
+}
+.layout-top-header .anticon {
+  font-size: 18px;
+  line-height: 64px;
+  cursor: pointer;
+}
 .full-container {
   height: 100%;
 }
@@ -27,4 +37,9 @@
 .login-header h1 {
   color: white;
   text-align: center;
+}
+
+.profile p {
+  line-height: 22px;
+  font-size: 16px;
 }

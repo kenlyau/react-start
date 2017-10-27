@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Layout } from 'antd'
+import { Redirect } from 'react-router-dom'
 import LoginForm from '../components/login-form'
 import { userLogin } from '../store/user'
 const { Header, Content } = Layout
@@ -13,6 +14,11 @@ export class Login extends React.Component {
     }
   }
   render () {
+    if (this.props.user.auth) {
+      return (
+        <Redirect to="/" />
+      )
+    }
     return (
       <Layout className="full-container">
         <Header className="login-header"><h1>React Start</h1></Header>
@@ -23,4 +29,11 @@ export class Login extends React.Component {
     )
   }
 }
-export default connect()(Login)
+
+export function mapToStateProps (state) {
+  return {
+    user: state.user
+  }
+}
+
+export default connect(mapToStateProps)(Login)
