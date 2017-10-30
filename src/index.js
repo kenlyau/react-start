@@ -5,6 +5,8 @@ import App from './app'
 import configureStore, {sagaMiddleware} from './store/configure-store'
 import configureSaga from './saga/configure-saga'
 import initalState from './services/initial-state'
+
+import '../node_modules/antd/dist/antd.css'
 import './static/css/style.css'
 
 const store = configureStore(initalState())

@@ -13,6 +13,7 @@ const logger = createLogger()
 export const sagaMiddleware = createSagaMiddleware()
 
 export default function configureStore (initalState = {}) {
+  console.log('initalState ==>', initalState)
   return createStore(
     combineReducers(reducers),
     initalState,

@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "dev": "node ./scripts/dev-server.js",
-    "build": "webpack --progress -p --config ./scripts/webpack-prod.config.js"
+    "build": "webpack --progress --config ./scripts/webpack-prod.config.js"
   },
   "repository": {
     "type": "git",

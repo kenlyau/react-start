@@ -4,8 +4,9 @@ import { connect } from 'react-redux'
 
 export function PrivateRoute ({component: Component, ...rest}) {
   return (
-    <Route {...rest} render={props => (
-      rest.user.auth ? (
+    <Route {...rest} render={props => {
+      console.log(rest)
+      return rest.user.auth ? (
         <Component {...props} />
       ) : (
         <Redirect to={{
@@ -13,13 +14,14 @@ export function PrivateRoute ({component: Component, ...rest}) {
           state: {from: props.location}
         }} />
       )
-    )}/>
+    }}/>
   )
 }
 
 export function mapStateToProps (state) {
+  console.log(state)
   return {
-    user: state.user
+    user: state.user || {}
   }
 }
 

@@ -32,7 +32,7 @@ export class Login extends React.Component {
 
 export function mapToStateProps (state) {
   return {
-    user: state.user
+    user: state.user || {}
   }
 }
 

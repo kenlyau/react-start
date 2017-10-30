@@ -1,3 +1,4 @@
+const webpack = require('webpack')
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
@@ -10,26 +11,32 @@ module.exports = {
     filename: '[name].bundle.js',
     publicPath: './'
   },
+  devtool: 'source-map',
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html',
       filename: './index.html'
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendors',
+      minChunks: (module, count) => {
+        return (
+          module.resource &&
+          module.resource.indexOf(path.resolve('node_modules')) === 0
+        )
+      }
     })
   ],
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
-        loader: 'babel-loader',
+        use: 'babel-loader',
         exclude: /node_module/
       },
       {
         test: /\.html/,
-        loader: 'html-loader?attrs=false'
-      },
-      {
-        test: /\.css/,
-        loader: ['style-loader', 'css-loader']
+        use: 'html-loader?attrs=false'
       }
     ]
   }
