@@ -49,6 +49,8 @@ export function userLogoutSuccess () {
   }
 }
 
+export const NAME = 'user'
+
 export default function user (state = {}, action) {
   switch (action.type) {
     case types.USER_LOGIN_SUCCESS:

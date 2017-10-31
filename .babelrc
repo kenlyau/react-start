@@ -1,6 +1,13 @@
 {
-  "presets": ["react", "env"],
+  "presets": ["react",
+    ["env", {
+      "targets": {
+        "browsers": ["last 2 versions", "ie 9"]
+      }
+    }]
+  ],
   "plugins": [
+    ["import", { "libraryName": "antd", "style": "css" }],
     "transform-runtime",
     "transform-object-rest-spread"
   ]

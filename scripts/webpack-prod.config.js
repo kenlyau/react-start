@@ -6,9 +6,9 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 const settings = {
   plugins: [
-    new ExtractTextPlugin('style.css'),
+    new ExtractTextPlugin('[name].css'),
     new WebPack.optimize.UglifyJsPlugin({
-      sourceMap: false
+      sourceMap: true
     }),
     new WebPack.DefinePlugin({
       'process.env': {
@@ -23,7 +23,14 @@ const settings = {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: 'css-loader'
+          use: ['css-loader']
+        })
+      },
+      {
+        test: /\.less$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: ['css-loader', 'less-loader']
         })
       }
     ]

@@ -1,3 +1,4 @@
+import 'object-assign-polyfill'
 import React from 'react'
 import {Provider} from 'react-redux'
 import ReactDOM from 'react-dom'
@@ -6,8 +7,7 @@ import configureStore, {sagaMiddleware} from './store/configure-store'
 import configureSaga from './saga/configure-saga'
 import initalState from './services/initial-state'
 
-import '../node_modules/antd/dist/antd.css'
-import './static/css/style.css'
+import './static/less/app.less'
 
 const store = configureStore(initalState())
 configureSaga(sagaMiddleware)
