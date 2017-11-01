@@ -7,6 +7,7 @@ import configureStore, {sagaMiddleware} from './store/configure-store'
 import configureSaga from './saga/configure-saga'
 import initalState from './services/initial-state'
 
+import 'antd/dist/antd.less'
 import './static/less/app.less'
 
 const store = configureStore(initalState())

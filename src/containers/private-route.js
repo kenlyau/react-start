@@ -19,7 +19,6 @@ export function PrivateRoute ({component: Component, ...rest}) {
 }
 
 export function mapStateToProps (state) {
-  console.log(state)
   return {
     user: state.user || {}
   }

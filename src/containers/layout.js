@@ -2,12 +2,31 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Layout, Menu, Icon } from 'antd'
 import { Switch, Link, Route } from 'react-router-dom'
+import Bundle from '../components/bundle'
 import Home from './home'
 import User from './user'
-import Posts from './posts'
-import Post from './post'
 import { userLogout } from '../store/user'
 const { Header, Content, Sider } = Layout
+
+const Posts = (props) => (
+  <Bundle load={require('bundle-loader?lazy&name=posts!./posts')}>
+    {Comp => (
+      Comp
+        ? <Comp {...props} />
+        : <Home />
+    )}
+  </Bundle>
+)
+
+const Post = (props) => (
+  <Bundle load={require('bundle-loader?lazy&name=post!./post')}>
+    {Comp => (
+      Comp
+        ? <Comp {...props}/>
+        : <Home />
+    )}
+  </Bundle>
+)
 
 export class MainLayout extends React.Component {
   constructor (props) {
